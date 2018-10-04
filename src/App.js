@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-// import logo from './logo-symbol.svg';
-// <img src={logo} className="App-logo" alt="logo" />
-import './App.css';
+import './styles/base.css';
 import { getColors } from './api/api';
+import Header from './components/header';
 
 class App extends Component {
     constructor(props) {
@@ -28,7 +27,8 @@ class App extends Component {
 
     render() {
         return (
-            <div className="App">
+            <div className="app">
+                <Header />
                 <ul>
                     <li>{ console.log(this.state.colorsLoaded) }</li>
                     <li>{ console.log(this.state.colorList) }</li>

@@ -1,0 +1,17 @@
+.header-background {
+    width: 100%;
+    height: 100px;
+    background-color: #363C3C;
+}
+
+.app {
+    width: 1440px;
+}
+
+.logo {
+    width: 53px;
+    height: 53px;
+    position: relative;
+    top: calc(50% - 53px/2);
+    left: 30px;
+}
