@@ -1,0 +1,31 @@
+.button-container {
+    width: 100%;
+    height: 177px;
+    text-align: center;
+}
+.button {
+    position: relative;
+    top: 80px;
+    width: 260px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #363C3C;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.5);
+    font-family: 'Roboto', sans-serif;
+    color: #363C3C;
+    font-size: 24px;
+}
+.button:hover {
+    box-shadow: 0 2px 18px rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+.button:active {
+    outline: none;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+}
+.button:focus {
+    outline: none;
+}
