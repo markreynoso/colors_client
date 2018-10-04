@@ -1,28 +1,43 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo-symbol.svg';
+// <img src={logo} className="App-logo" alt="logo" />
 import './App.css';
+import { getColors } from './api/api';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+    constructor(props) {
+        super(props);
+        this.state = {
+            colorsLoaded: false,
+            colorList: null
+        };
+
+        this.setColors = this.setColors.bind(this);
+    }
+
+    componentDidMount() {
+        getColors(this.setColors)
+    }
+
+    setColors(response) {
+        this.setState({
+            colorsLoaded: true,
+            colorList: response.data
+        });
+    }
+
+    render() {
+        return (
+            <div className="App">
+                <ul>
+                    <li>{ console.log(this.state.colorsLoaded) }</li>
+                    <li>{ console.log(this.state.colorList) }</li>
+                    {this.state.colorsLoaded ? this.state.colorList.map( listValue =>
+                        <li key={listValue['color_id']}>{listValue['hex']}</li>) : <li>loading</li> }
+                </ul>
+            </div>
+        );
+    }
 }
 
 export default App;
