@@ -1,0 +1,25 @@
+.paginate-container {
+    text-align: center;
+}
+.pagination li.first {
+    display: none !important;
+}
+.pagination li.previous {
+    display: none !important;
+}
+.pagination li.next {
+    display: none !important;
+}
+.pagination li.last {
+    display: none !important;
+}
+.pagination li a {
+    font-family: 'Roboto', serif;
+    font-size: 24px;
+    color: #363C3C;
+}
+.active > a {
+    border-bottom: 1px solid #363C3C;
+    padding-bottom: 0px !important;
+    /* text-decoration: underline !important; */
+}

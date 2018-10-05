@@ -7,7 +7,7 @@
 .swatch-container ul {
     padding: 65px 0;
 }
-.swatch-container li {
+.swatch-container .list {
     width: 25%;
     list-style: none;
     float: left;

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './styles/base.css';
 import { getColors } from './api/api';
+import Loading from './assets/loading.png';
 import Header from './components/header';
 import Sidebar from './components/sidebar';
 import Swatch from './components/swatch';
@@ -80,8 +81,12 @@ class App extends Component {
                         <Detail 
                             colorSelection={ this.state.colorSelection }
                             handleClick={ this.handleClick }/> : 
-                        <Swatch colorList={ this.state.colorList } handleClick={ this.handleClick }/>) : 
-                    <p>circle...</p>
+                        <Swatch 
+                            colorList={ this.state.colorList } 
+                            handleClick={ this.handleClick }/>) : 
+                    <div className="loading">
+                        <img src={Loading} alt="loading" />
+                    </div>
                 }
             </div>
         );
