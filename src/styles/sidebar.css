@@ -1,0 +1,24 @@
+.sidebar {
+    position: fixed;
+    top: 100px;
+    width: 320px;
+    height: calc(100% - 100px);
+    background-color: #D6D8D8;
+}
+.color-family-container {
+    width: 100%;
+}
+.color-family-container ul {
+    padding-left: 30px;
+}
+.color-family-container li {
+    list-style: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    color: #363C3C;
+    height: 45px;
+}
+.color-family-container li:hover {
+    color: white;
+    cursor: pointer;
+}

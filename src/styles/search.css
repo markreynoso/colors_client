@@ -1,0 +1,33 @@
+.input-box {
+    width: 320px;
+    float: right;
+    position: relative;
+    top: calc(50% - 69px/2);
+    padding-right: 37px;
+}
+.input-text {
+    background-color: #FFFFFF;
+    height: 60px;
+    width: 320px;
+    padding: 0 0 0 15px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border-style: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    color: #363C3C;
+    position: relative;
+    top: calc(7px/2);
+}
+.input-text::placeholder {
+    color: rgb(54, 60, 60);
+    opacity: .5;
+    font-size: 24px;
+}
+.input-text:hover {
+    background-color: lightgrey;
+}
+.input-text:focus {
+    outline: none;
+    background-color: lightgrey;
+}

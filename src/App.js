@@ -1,28 +1,96 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './styles/base.css';
+import { getColors } from './api/api';
+import Loading from './assets/loading.png';
+import Header from './components/header';
+import Sidebar from './components/sidebar';
+import Swatch from './components/swatch';
+import Detail from './components/detail';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+    constructor(props) {
+        super(props);
+        this.state = {
+            colorsLoaded: false,
+            colorList: null,
+            searchName: '',
+            colorSelection: null,
+            detailView: false
+        };
+
+        this.setColors = this.setColors.bind(this);
+        this.handleInput = this.handleInput.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+        this.randomColor = this.randomColor.bind(this);
+    }
+
+    componentDidMount() {
+        getColors(this.setColors)
+    }
+
+    setColors(response) {
+        this.setState({
+            colorsLoaded: true,
+            colorList: response.data
+        });
+    }
+
+    handleInput(event) {
+        this.setState({
+            searchName: event.target.value
+        });
+    }
+
+    handleSubmit(event) {
+        if (event.key === 'Enter') {
+            // do something
+        }
+    }
+
+    handleClick(event) {
+        if(event.target.innerHTML === "Random Color") {
+            this.setState({
+                colorSelection: this.randomColor(),
+                detailView: true
+            });
+        } else if(event.target.innerHTML === "Clear") {
+            this.setState({
+                colorSelection: null,
+                detailView: false
+            })
+        } else {
+            this.setState({
+                colorSelection: event.target.id,
+                detailView: true
+            });
+        }
+    }
+
+    randomColor() {
+        return this.state.colorList[Math.floor(Math.random() * this.state.colorList.length)]['hex']
+    }
+
+    render() {
+        return (
+            <div className="app">
+                <Header />
+                <Sidebar handleClick={ this.handleClick }/>
+                {this.state.colorsLoaded ? 
+                    (this.state.colorSelection ? 
+                        <Detail 
+                            colorSelection={ this.state.colorSelection }
+                            handleClick={ this.handleClick }/> : 
+                        <Swatch 
+                            colorList={ this.state.colorList } 
+                            handleClick={ this.handleClick }/>) : 
+                    <div className="loading">
+                        <img src={Loading} alt="loading" />
+                    </div>
+                }
+            </div>
+        );
+    }
 }
 
 export default App;
