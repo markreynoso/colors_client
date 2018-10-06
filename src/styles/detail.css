@@ -1,5 +1,5 @@
 .detail-swatch {
-    width: 80%;
+    width: 1040px;
     margin: auto;
     height: 690px;
     top: 80px;
@@ -17,7 +17,43 @@
     font-size: 48px;
     color: #363C3C;
     display: block;
-    padding: 0 50px;
+    padding: 44px 0 0 50px;
     position: relative;
-    top: calc(50% - 612px/2);
+}
+@media (max-width: 1400px) {
+    .detail-swatch {
+        width: 80%;
+        height: 40vw;
+    }
+    .detail-tile {
+        height: 35vw;
+    }
+    .detail-swatch span {
+        padding-top: .5%;
+    }
+}
+@media (max-width: 1260px) {
+    .detail-swatch span {
+        font-size: 42px;
+    }
+}
+@media (max-width: 1060px) {
+    .detail-swatch {
+        top: 50px;
+    }
+    .detail-swatch span {
+        font-size: 33px;
+    }
+}
+@media (max-width: 768px) {
+    .detail-swatch span {
+        font-size: 28px;
+        padding: 0 0 0 30px;
+    }
+}
+@media (max-width: 575px) {
+    .detail-swatch span {
+        font-size: 20px;
+        padding: 0 0 0 20px;
+    }
 }

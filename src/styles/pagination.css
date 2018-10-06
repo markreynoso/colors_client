@@ -23,3 +23,8 @@
     padding-bottom: 0px !important;
     /* text-decoration: underline !important; */
 }
+@media (max-width: 1060px) {
+    .pagination li a {
+        font-size: 18px;
+    }
+}

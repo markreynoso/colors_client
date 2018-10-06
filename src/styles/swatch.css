@@ -14,7 +14,6 @@
     padding-bottom: 30px;
 }
 .swatch {
-    color: transparent;
     width: 218px;
     height: 261px;
     margin: auto;
@@ -39,4 +38,40 @@
 .swatch:hover {
     cursor: pointer;
     box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.5);
+}
+@media (max-width: 1280px) {
+    .swatch-container .list {
+        width: 33%;
+    }
+}
+@media (max-width: 1060px) {
+    .swatch-container {
+        left: 220px;
+        width: calc(100% - 220px);
+        top: 80px;
+    }
+    .swatch-container ul {
+        padding: 35px 0;
+    }
+    .swatch {
+        width: 150px;
+        height: 175px;
+    }
+    .tile {
+        height: 150px;
+    }
+    .swatch span {
+        top: calc(50% - 172px/2);
+        font-size: 18px;
+    }
+}
+@media (max-width: 768px) {
+    .swatch-container .list {
+        width: 50%;
+    }
+}
+@media (max-width: 575px) {
+    .swatch-container .list {
+        width: 100%;
+    }
 }

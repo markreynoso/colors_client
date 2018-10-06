@@ -17,9 +17,9 @@ const Search = (props) => {
 }
 
 Search.propTypes = {
-    searchName: PropTypes.string.isRequired,
-    handleSubmit: PropTypes.func.isRequired,
-    handleInput: PropTypes.func.isRequired
+    searchName: PropTypes.string,
+    handleSubmit: PropTypes.func,
+    handleInput: PropTypes.func
 }
 
 export default Search;

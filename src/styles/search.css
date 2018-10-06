@@ -8,7 +8,7 @@
 .input-text {
     background-color: #FFFFFF;
     height: 60px;
-    width: 320px;
+    width: 100%;
     padding: 0 0 0 15px;
     box-sizing: border-box;
     border-radius: 10px;
@@ -30,4 +30,23 @@
 .input-text:focus {
     outline: none;
     background-color: lightgrey;
+}
+@media (max-width: 1060px) {
+    .input-box {
+        width: 240px;
+        padding-right: 50px;
+    }
+    .input-text {
+        height: 40px;
+        font-size: 18px;
+        top: calc(24px/2);
+    }
+    .input-text::placeholder {
+        font-size: 18px;
+    }
+}
+@media (max-width: 575px) {
+    .input-box {
+        padding-right: 20px;
+    }
 }
