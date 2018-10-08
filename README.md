@@ -41,6 +41,6 @@ You are now ready to run the program on your local machine.
 
 `$ npm start`
 
-Open your browser and navigate to the following url and you can search the Star Wars API(SWAPI).
+Open your browser and navigate to the following url:
 
 [http://localhost:3000](http://localhost:3000)
